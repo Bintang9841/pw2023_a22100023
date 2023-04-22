@@ -1,11 +1,11 @@
 <?php
-$servername = "localhost";
+$servername = "localhost:8080";
 $username = "root";
 $password = "";
-$dbname = "nama_database";
+$dbname = "pelanggan";
 
 // Membuat koneksi
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect('localhost:8080', 'root', '', 'pelanggan');
 
 // Memeriksa koneksi
 if (!$conn) {
