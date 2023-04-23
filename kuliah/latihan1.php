@@ -1,9 +1,9 @@
 <?php
 // Koneksi ke DB & Pilih Database
-$conn = mysqli_connect('localhost', 'root', 'root', 'pw_043040023');
+$conn = mysqli_connect('localhost', 'root', '', 'pw_a22100023');
 
 // Query isi tabel mahasiswa
-$result = mysqli_query($conn, "SELECT * FROM mahasiswa");
+$result = mysqli_query($conn, "SELECT * FROM cosplayer");
 
 // ubah data ke dalam array
 // $row = mysqli_fetch_row($result); // array numerik
@@ -33,19 +33,20 @@ $mahasiswa = $rows;
     <tr>
       <th>#</th>
       <th>Gambar</th>
-      <th>NRP</th>
+      <th>Id</th>
       <th>Nama</th>
-      <th>Email</th>
-      <th>Jurusan</th>
+      <th>Umur</th>
+      <th>Ig</th>
+      <th>Followers</th>
       <th>Aksi</th>
     </tr>
 
     <?php $i = 1;
-    foreach ($mahasiswa as $m) : ?>
+    foreach ($cosplayer as $m) : ?>
       <tr>
         <td><?= $i++; ?></td>
         <td><img src="img/<?= $m['gambar']; ?>" width="60"></td>
-        <td><?= $m['nrp']; ?></td>
+        <td><?= $m['id']; ?></td>
         <td><?= $m['nama']; ?></td>
         <td><?= $m['email']; ?></td>
         <td><?= $m['jurusan']; ?></td>
