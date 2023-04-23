@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2023 at 01:25 PM
+-- Generation Time: Apr 23, 2023 at 03:12 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cosplayer` (
-  `id` varchar(20) NOT NULL,
+  `id` int(20) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `umur` int(20) NOT NULL,
   `ig` varchar(50) NOT NULL,
@@ -41,11 +41,12 @@ CREATE TABLE `cosplayer` (
 --
 
 INSERT INTO `cosplayer` (`id`, `nama`, `umur`, `ig`, `followers`, `gambar`) VALUES
-('1', 'KameAam', 32, '@kameaam', '811.000', 'KameAam.jpeg'),
-('2', 'MatchaMei', 31, '@matchamei', '284.000', 'MatchaMei.jpeg'),
-('3', 'Clarissa Punipun', 31, '@punipun7', '592.000', 'Clarissa Punipun.jpeg'),
-('4', 'Lola Zieta', 26, '@lolazieta', '461.000', 'Lola Zieta.jpeg'),
-('5', 'Larissa Rocefort', 25, '@LarissaRocefort', '598.000', 'Larissa Rochefort.jpeg');
+(0, 'dfdhd', 0, 'fhfjftjft', 'dfhdfhd', 'gfhfhdhd'),
+(1, 'KameAam', 32, '@kameaam', '811.000', 'KameAam.jpeg'),
+(2, 'MatchaMei', 31, '@matchamei', '284.000', 'MatchaMei.jpeg'),
+(3, 'Clarissa Punipun', 31, '@punipun7', '592.000', 'Clarissa Punipun.jpeg'),
+(4, 'Lola Zieta', 26, '@lolazieta', '461.000', 'Lola Zieta.jpeg'),
+(5, 'Larissa Rocefort', 25, '@LarissaRocefort', '598.000', 'Larissa Rochefort.jpeg');
 
 --
 -- Indexes for dumped tables

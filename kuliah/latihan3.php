@@ -15,6 +15,9 @@ $cosplayer = execute_query("SELECT * FROM cosplayer");
 <body>
   <h3>Daftar Cosplayer</h3>
 
+  <a href="tambah.php">Tambah Data Cosplayer</a>
+<br><br>
+
   <table border="1" cellpadding="10" cellspacing="0">
     <tr>
       <th>#</th>

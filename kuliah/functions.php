@@ -26,17 +26,16 @@ function tambah($data)
 {
   $conn = koneksi();
 
+  $id = htmlspecialchars($data['id']);
   $nama = htmlspecialchars($data['nama']);
   $umur = htmlspecialchars($data['umur']);
   $ig = htmlspecialchars($data['ig']);
   $followers = htmlspecialchars($data['followers']);
   $gambar = htmlspecialchars($data['gambar']);
 
-  $query = "INSERT INTO
-              cosplayer
-            VALUES
-            (null, '$nama', '$umur', '$ig', '$followers', '$gambar');
-          ";
+  $query = "INSERT INTO cosplayer (id, nama, umur, ig, followers, gambar) 
+            VALUES ('$id', '$nama', '$umur', '$ig', '$followers', '$gambar')";
+
   mysqli_query($conn, $query);
   echo mysqli_error($conn);
   return mysqli_affected_rows($conn);

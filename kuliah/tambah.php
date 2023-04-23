@@ -1,7 +1,7 @@
 <?php
 require 'functions.php';
 
-// cek apakah tombol tambah sudah ditekan
+// cek tombol tambah sudah ditekan
 if (isset($_POST['tambah'])) {
   if (tambah($_POST) > 0) {
     echo "<script>
@@ -20,7 +20,7 @@ if (isset($_POST['tambah'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tambah Data Mahasiswa</title>
+  <title>Tambah Data Cosplayer</title>
 </head>
 
 <body>
@@ -29,29 +29,34 @@ if (isset($_POST['tambah'])) {
     <ul>
       <li>
         <label>
+          ID :
+          <input type="text" name="id" autofocus required>
+        </label>
+      </li>
+      <li>
+        <label>
           Nama :
-          <input type="text" name="nama" autofocus required>
+          <input type="text" name="nama" required>
         </label>
       </li>
       <li>
         <label>
-          NRP :
-          <input type="text" name="nrp" required>
+          Umur :
+          <input type="text" name="umur" required>
         </label>
       </li>
       <li>
         <label>
-          Email :
-          <input type="text" name="email" required>
+          Ig :
+          <input type="text" name="ig" required>
         </label>
       </li>
       <li>
         <label>
-          Jurusan :
-          <input type="text" name="jurusan" required>
+          Followers :
+          <input type="text" name="followers" required>
         </label>
       </li>
-      <li>
         <label>
           Gambar :
           <input type="text" name="gambar" required>
