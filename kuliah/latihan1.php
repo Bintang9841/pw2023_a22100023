@@ -14,8 +14,8 @@ while ($row = mysqli_fetch_assoc($result)) {
   $rows[] = $row;
 }
 
-// tampung ke variabel mahasiswa
-$mahasiswa = $rows;
+// tampung ke variabel 
+$cosplayer = $rows;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,11 +23,11 @@ $mahasiswa = $rows;
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daftar Mahasiswa</title>
+  <title>Daftar Cosplayer</title>
 </head>
 
 <body>
-  <h3>Daftar Mahasiswa</h3>
+  <h3>Daftar Cosplayer</h3>
 
   <table border="1" cellpadding="10" cellspacing="0">
     <tr>
@@ -42,14 +42,15 @@ $mahasiswa = $rows;
     </tr>
 
     <?php $i = 1;
-    foreach ($cosplayer as $m) : ?>
+    foreach ($cosplayer as $c) : ?>
       <tr>
         <td><?= $i++; ?></td>
-        <td><img src="img/<?= $m['gambar']; ?>" width="60"></td>
-        <td><?= $m['id']; ?></td>
-        <td><?= $m['nama']; ?></td>
-        <td><?= $m['email']; ?></td>
-        <td><?= $m['jurusan']; ?></td>
+        <td><img src="img/<?= $c['gambar']; ?>" width="60"></td>
+        <td><?= $c['id']; ?></td>
+        <td><?= $c['nama']; ?></td>
+        <td><?= $c['umur']; ?></td>
+        <td><?= $c['ig']; ?></td>
+        <td><?= $c['followers']; ?></td>
         <td>
           <a href="">ubah</a> | <a href="">hapus</a>
         </td>

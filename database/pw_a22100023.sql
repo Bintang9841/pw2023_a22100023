@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2023 at 01:10 PM
+-- Generation Time: Apr 23, 2023 at 01:19 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -33,7 +33,7 @@ CREATE TABLE `cosplayer` (
   `umur` int(20) NOT NULL,
   `ig` varchar(50) NOT NULL,
   `followers` varchar(50) NOT NULL,
-  `gambar` varchar(20) NOT NULL
+  `gambar` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -43,9 +43,9 @@ CREATE TABLE `cosplayer` (
 INSERT INTO `cosplayer` (`id`, `nama`, `umur`, `ig`, `followers`, `gambar`) VALUES
 ('1', 'KameAam', 32, '@kameaam', '811.000', 'KameAam.jpeg'),
 ('2', 'MatchaMei', 31, '@matchamei', '284.000', 'MatchaMei.jpeg'),
-('3', 'Clarissa Punipun', 31, '@punipun7', '592.000', 'Clasrissa Punipun.jp'),
+('3', 'Clarissa Punipun', 31, '@punipun7', '592.000', 'Clasrissa Punipun.jpeg'),
 ('4', 'Lola Zieta', 26, '@lolazieta', '461.000', 'Lola Zieta.jpeg'),
-('5', 'Larissa Rocefort', 25, '@LarissaRocefort', '598.000', 'Larissa Rocefort.jpe');
+('5', 'Larissa Rocefort', 25, '@LarissaRocefort', '598.000', 'Larissa Rocefort.jpeg');
 
 --
 -- Indexes for dumped tables
