@@ -1,6 +1,7 @@
 <?php
 require 'functions.php';
-$mahasiswa = query("SELECT * FROM mahasiswa");
+$cosplayer = execute_query("SELECT * FROM cosplayer");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,14 +9,11 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daftar Mahasiswa</title>
+  <title>Daftar Cosplayer</title>
 </head>
 
 <body>
-  <h3>Daftar Mahasiswa</h3>
-
-  <a href="tambah.php">Tambah Data Mahasiswa</a>
-  <br><br>
+  <h3>Daftar Cosplayer</h3>
 
   <table border="1" cellpadding="10" cellspacing="0">
     <tr>
@@ -26,13 +24,13 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
     </tr>
 
     <?php $i = 1;
-    foreach ($mahasiswa as $m) : ?>
+    foreach ($cosplayer as $c) : ?>
       <tr>
         <td><?= $i++; ?></td>
-        <td><img src="img/<?= $m['gambar']; ?>" width="60"></td>
-        <td><?= $m['nama']; ?></td>
+        <td><img src="img/<?= $c['gambar']; ?>" width="60"></td>
+        <td><?= $c['nama']; ?></td>
         <td>
-          <a href="detail.php?id=<?= $m['id']; ?>">lihat detail</a>
+          <a href="detail.php?Id=<?= $c['id']; ?>">lihat detail</a>
         </td>
       </tr>
     <?php endforeach; ?>

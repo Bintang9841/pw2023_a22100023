@@ -1,14 +1,6 @@
 <?php
 
-function koneksi()
-{
-  return mysqli_connect('localhost', 'root', '', 'pw_a22100023');
-}
-
-function execute_query($query) 
-  // Implementasi fungsi untuk menjalankan query di sini
-{
-
+function execute_query($query) { // tambahkan kurung kurawal awal di sini
   $conn = koneksi();
 
   $result = mysqli_query($conn, $query);
@@ -25,6 +17,10 @@ function execute_query($query)
 
   return $rows;
 }
+function koneksi() {
+  return mysqli_connect('localhost', 'root', '', 'pw_a22100023');
+}
+
 
 function tambah($data)
 {

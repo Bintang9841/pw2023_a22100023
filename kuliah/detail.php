@@ -1,11 +1,9 @@
 <?php
 require 'functions.php';
 
-// ambil id dari URL
-$id = $_GET['id'];
+$id = $_GET['Id'];
+$c = execute_query("SELECT * FROM cosplayer WHERE id = $id");
 
-// query mahasiswa berdasarkan id
-$m = query("SELECT * FROM mahasiswa WHERE id = $id");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,19 +11,19 @@ $m = query("SELECT * FROM mahasiswa WHERE id = $id");
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detail Mahasiswa</title>
+  <title>Detail Cosplayer</title>
 </head>
 
 <body>
-  <h3>Detail Mahasiswa</h3>
+  <h3>Detail Cosplayer</h3>
   <ul>
-    <li><img src="img/<?= $m['gambar']; ?>"></li>
-    <li>NRP : <?= $m['nrp']; ?></li>
-    <li>Nama : <?= $m['nama']; ?></li>
-    <li>Email : <?= $m['email']; ?></li>
-    <li>Jurusan : <?= $m['jurusan']; ?></li>
+  <li><img src="img/<?= $c['gambar']; ?>" width="150" height="150"></li>
+    <li>Id : <?= $c['id']; ?></li>
+    <li>Umur : <?= $c['umur']; ?></li>
+    <li>Ig : <?= $c['ig']; ?></li>
+    <li>Followers : <?= $c['followers']; ?></li>
     <li><a href="">ubah</a> | <a href="">hapus</a></li>
-    <li><a href="latihan3.php">Kembali ke daftar mahasiswa</a></li>
+    <li><a href="latihan3.php">Kembali ke daftar cosplayer</a></li>
   </ul>
 </body>
 
