@@ -1,39 +1,43 @@
 <?php
-$servername = "localhost:8080";
-$username = "root";
-$password = "";
-$dbname = "pelanggan";
-
-// Membuat koneksi
-$conn = mysqli_connect('localhost:8080', 'root', '', 'pelanggan');
-
-// Memeriksa koneksi
-if (!$conn) {
-    die("Koneksi gagal: " . mysqli_connect_error());
-}
-
-// Mengambil data dari form
-$nama = $_POST['nama'];
-$email = $_POST['email'];
-
-// Menjalankan query untuk melakukan operasi insert
-$sql = "INSERT INTO nama_tabel (nama, email) VALUES ('$nama', '$email')";
-
-if (mysqli_query($conn, $sql)) {
-    echo "Data berhasil disimpan";
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
-
-// Menutup koneksi
-mysqli_close($conn);
+require 'functions.php';
+$mahasiswa = query("SELECT * FROM mahasiswa");
 ?>
-<form method="post" action="simpan.php">
-    <label for="nama">Nama:</label>
-    <input type="text" name="nama" id="nama">
-    <br>
-    <label for="email">Email:</label>
-    <input type="email" name="email" id="email">
-    <br>
-    <input type="submit" value="Simpan">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Mahasiswa</title>
+</head>
+
+<body>
+  <h3>Daftar Mahasiswa</h3>
+
+  <a href="tambah.php">Tambah Data Mahasiswa</a>
+  <br><br>
+
+  <table border="1" cellpadding="10" cellspacing="0">
+    <tr>
+      <th>#</th>
+      <th>Gambar</th>
+      <th>Nama</th>
+      <th>Aksi</th>
+    </tr>
+
+    <?php $i = 1;
+    foreach ($mahasiswa as $m) : ?>
+      <tr>
+        <td><?= $i++; ?></td>
+        <td><img src="img/<?= $m['gambar']; ?>" width="60"></td>
+        <td><?= $m['nama']; ?></td>
+        <td>
+          <a href="detail.php?id=<?= $m['id']; ?>">lihat detail</a>
+        </td>
+      </tr>
+    <?php endforeach; ?>
+  </table>
+
+</body>
+
+</html>
