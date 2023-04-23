@@ -1,6 +1,7 @@
 <?php
 require 'functions.php';
-$mahasiswa = query("SELECT * FROM mahasiswa");
+$cosplayer = execute_query("SELECT * FROM cosplayer");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,32 +9,34 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daftar Mahasiswa</title>
+  <title>Daftar Cosplayer</title>
 </head>
 
 <body>
-  <h3>Daftar Mahasiswa</h3>
+  <h3>Daftar Cosplayer</h3>
 
   <table border="1" cellpadding="10" cellspacing="0">
     <tr>
       <th>#</th>
       <th>Gambar</th>
-      <th>NRP</th>
+      <th>Id</th>
       <th>Nama</th>
-      <th>Email</th>
-      <th>Jurusan</th>
+      <th>Umur</th>
+      <th>Ig</th>
+      <th>Followers</th>
       <th>Aksi</th>
     </tr>
 
     <?php $i = 1;
-    foreach ($mahasiswa as $m) : ?>
+    foreach ($cosplayer as $c) : ?>
       <tr>
         <td><?= $i++; ?></td>
-        <td><img src="img/<?= $m['gambar']; ?>" width="60"></td>
-        <td><?= $m['nrp']; ?></td>
-        <td><?= $m['nama']; ?></td>
-        <td><?= $m['email']; ?></td>
-        <td><?= $m['jurusan']; ?></td>
+        <td><img src="img/<?= $c['gambar']; ?>" width="60"></td>
+        <td><?= $c['id']; ?></td>
+        <td><?= $c['nama']; ?></td>
+        <td><?= $c['umur']; ?></td>
+        <td><?= $c['ig']; ?></td>
+        <td><?= $c['followers']; ?></td>
         <td>
           <a href="">ubah</a> | <a href="">hapus</a>
         </td>

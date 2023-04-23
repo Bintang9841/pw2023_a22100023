@@ -2,11 +2,13 @@
 
 function koneksi()
 {
-  return mysqli_connect('localhost', 'root', '', 'pw2023_a22100023');
+  return mysqli_connect('localhost', 'root', '', 'pw_a22100023');
 }
 
-function query($query)
+function execute_query($query) 
+  // Implementasi fungsi untuk menjalankan query di sini
 {
+
   $conn = koneksi();
 
   $result = mysqli_query($conn, $query);
@@ -29,15 +31,15 @@ function tambah($data)
   $conn = koneksi();
 
   $nama = htmlspecialchars($data['nama']);
-  $nrp = htmlspecialchars($data['nrp']);
-  $email = htmlspecialchars($data['email']);
-  $jurusan = htmlspecialchars($data['jurusan']);
+  $umur = htmlspecialchars($data['umur']);
+  $ig = htmlspecialchars($data['ig']);
+  $followers = htmlspecialchars($data['followers']);
   $gambar = htmlspecialchars($data['gambar']);
 
   $query = "INSERT INTO
-              mahasiswa
+              cosplayer
             VALUES
-            (null, '$nama', '$nrp', '$email', '$jurusan', '$gambar');
+            (null, '$nama', '$umur', '$ig', '$followers', '$gambar');
           ";
   mysqli_query($conn, $query);
   echo mysqli_error($conn);
